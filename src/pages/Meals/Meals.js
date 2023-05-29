@@ -26,6 +26,8 @@ const Meals = ({route,navigation}) => {
   
   const renderMeal = ({item}) => <MealCard meal={item} onSelect={() => handleDetailSelect(item.idMeal)} /> 
 
+  // data={data.meals} içerideki meals yazmamızın sebebi api'yı sarmalayan meals arrayi bulunmaktadır.
+  // Flatlist arrayi listeler.
   return (
     <SafeAreaView style={styles.container}>
       <FlatList data={data.meals} renderItem={renderMeal} />
