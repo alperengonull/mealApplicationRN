@@ -1,4 +1,4 @@
-import { View, Text,ImageBackground,SafeAreaView,FlatList } from 'react-native'
+import {SafeAreaView,FlatList } from 'react-native'
 import React from 'react'
 import styles from './Meals.style'
 import Error from '../../components/Error/Error'
@@ -7,7 +7,8 @@ import useFetch from '../../hooks/useFetch'
 import MealCard from '../../components/MealCard/MealCard';
 import {API_MEALS_URL} from '@env'
 
-const Meals = ({route}) => {
+const Meals = ({route,navigation}) => {
+
 
 
   const {strCategory} = route.params
@@ -19,12 +20,14 @@ const Meals = ({route}) => {
    if (loading) return <Loading/>
    if (error) return <Error />
 
-
-
-  const renderMeal = ({item}) => <MealCard meal={item} /> 
+  //  Navigate
+  handleDetailSelect = (idMeal) => navigation.navigate('DetailsPage',{idMeal})
+ 
+  
+  const renderMeal = ({item}) => <MealCard meal={item} onSelect={() => handleDetailSelect(item.idMeal)} /> 
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <FlatList data={data.meals} renderItem={renderMeal} />
     </SafeAreaView>
   )

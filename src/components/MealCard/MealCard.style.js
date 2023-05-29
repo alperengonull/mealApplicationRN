@@ -1,25 +1,34 @@
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
-    mealItem: {
-        height: 200,
-        width: '100%',
-        backgroundColor: '#f5f5f5',
-        borderRadius: 10,
-        overflow: 'hidden',
-        marginVertical: 10,
-      },
-      bgImage: {
-        width: '100%',
-        height: '100%',
-        justifyContent: 'flex-end',
-      },
-      title: {
-        fontSize: 22,
-        color: 'white',
-        backgroundColor: 'rgba(0,0,0,0.5)',
-        paddingVertical: 5,
-        paddingHorizontal: 12,
-        textAlign: 'center',
-      },
+    container: {
+      backgroundColor: 'white',
+      borderRadius: 10,
+      borderWidth: 1,
+      borderColor: '#ffffff',
+      margin: 5,
+      flexDirection: 'row',
+      shadowColor:'#d9d9d9',
+      shadowOpacity:1,
+      shadowOffset:{
+        height:1,
+        width:1
+      }
+    },
+    mealImage: {
+      margin:10,
+      width: 100,
+      height: 100,
+      borderColor:'#f4511e',
+      borderWidth:2,
+      borderRadius: 10,
+    },
+    innerContainer: {
+      flex: 1,
+     marginTop:15,
+    },
+    text: {
+      fontWeight: 'bold',
+      fontSize: 16,
+    },
 })

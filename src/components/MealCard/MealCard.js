@@ -1,19 +1,20 @@
-import { View, Text,ImageBackground,SafeAreaView } from 'react-native'
-import React from 'react'
-import styles from './MealCard.style'
+import {View, Text, ImageBackground, SafeAreaView, Image,TouchableWithoutFeedback} from 'react-native';
+import React from 'react';
+import styles from './MealCard.style';
 
-const MealCard = ({meal}) => {
+const MealCard = ({meal,onSelect}) => {
   return (
-    <View style={styles.mealItem}>
-      <ImageBackground
-        source={{ uri: meal.strMealThumb }}
-        style={styles.bgImage}>
-        <Text style={styles.title} numberOfLines={1}>
+    <TouchableWithoutFeedback onPress={onSelect}>
+     <SafeAreaView style={styles.container}>
+     <Image style={styles.mealImage} source={{uri:meal.strMealThumb}} />
+      <View style={styles.innerContainer}>
+        <Text style={styles.text}>
           {meal.strMeal}
         </Text>
-      </ImageBackground>
-    </View>
-  )
-}
+      </View>
+     </SafeAreaView>
+    </TouchableWithoutFeedback>
+  );
+};
 
 export default MealCard;
