@@ -10,7 +10,9 @@ import styles from './Detail.style'
 const Detail = ({route}) => {
 
   const {idMeal} = route.params
-  console.log(idMeal)
+
+  // We will check which id of meal
+  // console.log(idMeal)
 
   const {data,loading,error} = useFetch(API_DETAIL_URL+idMeal)
 
