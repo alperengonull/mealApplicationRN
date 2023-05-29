@@ -5,8 +5,9 @@ import Error from '../../components/Error/Error.js'
 import Loading from '../../components/Loading/Loading.js'
 import CategoryCard from '../../components/CategoryCard/CategoryCard.js'
 import { API_CATEGORIES_URL } from '@env';
-const Categories = ({navigation}) => {
 
+
+const Categories = ({navigation}) => {
 
   //  Gets category meals
   const {data,loading,error} = useFetch(API_CATEGORIES_URL)

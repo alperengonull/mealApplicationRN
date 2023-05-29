@@ -10,6 +10,7 @@ import styles from './Detail.style'
 const Detail = ({route}) => {
 
   const {idMeal} = route.params
+  console.log(idMeal)
 
   const {data,loading,error} = useFetch(API_DETAIL_URL+idMeal)
 
@@ -20,7 +21,7 @@ const Detail = ({route}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList data={data.detail} renderItem={renderCategory} />
+      <FlatList data={data.meals} renderItem={renderCategory} keyExtractor={item => item.idMeal} />
     </SafeAreaView>
   )
 }

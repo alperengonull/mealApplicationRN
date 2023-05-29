@@ -13,8 +13,8 @@ const Router = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="CategoriesPage" component={Categories} options={{title:'CATEGORIES',headerTitleAlign:'center',headerTintColor:'black',headerStyle:{backgroundColor:'#f4511e'},headerBackTitleVisible:false}} />
-        <Stack.Screen name="MealsPage" component={Meals} options={{title:'MEALS',headerTitleAlign:'center',headerTintColor:'black',headerStyle:{backgroundColor:'#f4511e'}}} />
-        <Stack.Screen name="DetailsPage" component={Detail} options={{title:'DETAILS',headerTitleAlign:'center',headerTintColor:'black',headerStyle:{backgroundColor:'#f4511e'}}} />
+        <Stack.Screen name="MealsPage" component={Meals} options={{title:'MEALS',headerTitleAlign:'center',headerTintColor:'black',headerStyle:{backgroundColor:'#f4511e'},headerBackTitleVisible:false}} />
+        <Stack.Screen name="DetailsPage" component={Detail} options={{title:'DETAILS',headerTitleAlign:'center',headerTintColor:'black',headerStyle:{backgroundColor:'#f4511e'},headerBackTitleVisible:false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
