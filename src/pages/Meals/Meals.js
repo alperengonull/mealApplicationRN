@@ -6,6 +6,7 @@ import Loading from '../../components/Loading/Loading'
 import useFetch from '../../hooks/useFetch'
 import MealCard from '../../components/MealCard/MealCard';
 import {API_MEALS_URL} from '@env'
+import SearchButton from '../../components/SearchButton/SearchButton'
 
 const Meals = ({route,navigation}) => {
 
@@ -30,6 +31,7 @@ const Meals = ({route,navigation}) => {
   // Flatlist arrayi listeler.
   return (
     <SafeAreaView style={styles.container}>
+      <SearchButton />
       <FlatList data={data.meals} renderItem={renderMeal} />
     </SafeAreaView>
   )
